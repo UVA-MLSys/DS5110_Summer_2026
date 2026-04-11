@@ -1,0 +1,17 @@
+{
+  "dataset_name": "CAMELS-US",
+  "model_name": "chronos-2",
+  "target_variable": "QObs(mm/d)",
+  "lookback_window": 30,
+  "forecast_horizon": 1,
+  "model_parameters": {
+    "model_id": "amazon/chronos-2",
+    "prediction_length": 1,
+    "quantile_levels": [
+      0.5
+    ],
+    "device_map": "cuda"
+  },
+  "rmse": 2.451361768118934,
+  "notes": "Overall RMSE on location-holdout test split (20% randomly selected basin IDs)."
+}

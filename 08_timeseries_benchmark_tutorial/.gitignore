@@ -1,0 +1,21 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+# Local environments
+.venv/
+venv/
+
+# Data artifacts (keep folders, ignore heavy files)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Results artifacts
+results/figures/*
+!results/figures/.gitkeep
+!results/figures/actual_vs_predicted_visualization.png

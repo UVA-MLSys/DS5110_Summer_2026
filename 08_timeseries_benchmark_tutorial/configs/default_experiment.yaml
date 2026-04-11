@@ -1,0 +1,36 @@
+project:
+  title: "Time series benchmarking tutorial (Hydrology CAMELS US with Chronos 2)"
+  team:
+    - "Junyang He"
+
+data:
+  input_csv_path: "data/raw/BasicInputTimeSeries_us.csv"
+  timestamp_column: "Year_Mnth_Day"
+  id_column: "basin_id"
+  target_column: "QObs(mm/d)"
+  drop_unnamed_first_column: true
+  fill_method: "forward_fill_within_basin"
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+
+task:
+  task_type: "single_step_forecasting"
+  input_mode: "univariate"
+  lookback_window: 30
+  forecast_horizon: 1
+
+model:
+  model_name: "chronos-2"
+  model_id: "amazon/chronos-2"
+  quantile_levels: [0.5]
+  device_preference: "cuda_if_available_else_cpu"
+
+evaluation:
+  metrics: ["rmse"]
+  report: "overall_test_rmse"
+
+outputs:
+  benchmark_results_path: "results/benchmark_results.json"
+  test_predictions_path: "results/predictions_test.csv"
+  figure_path: "results/figures/actual_vs_predicted.png"

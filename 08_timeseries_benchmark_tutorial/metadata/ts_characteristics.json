@@ -1,0 +1,8 @@
+{
+  "number_of_observed_streams": 1,
+  "number_of_target_streams": 1,
+  "number_of_exogenous_streams": 0,
+  "number_of_exogenous_static_variables": 0,
+  "number_of_instances": 671,
+  "data_modality": "numerical"
+}
